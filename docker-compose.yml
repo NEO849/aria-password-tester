@@ -3,7 +3,7 @@ services:
   aria-password-tester:
     build: .
     ports:
-      - "127.0.0.1:8000:8000"
+      - "${BIND_ADDR:-127.0.0.1}:${HOST_PORT:-8000}:8000"
     env_file:
       - .env
     restart: unless-stopped
